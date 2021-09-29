@@ -1,0 +1,71 @@
+{{#extends 'base'}}
+
+{{#block 'content'}}
+<div class="container-fluid mb-5">
+    <div class="row">
+        <h1 class="col-9">Appointment Details of {{appointment.appointment_id}}</h1>
+        <div class="col-3">
+            <a href="/appointment/delete/{{appointment._id}}" class=" btn allbtn">Cancel Appointment</a>
+        </div>
+    </div>
+    <hr>
+    </hr>
+    <h4 class="mt-4">Patient Details</h4>
+    <div class="row">
+        <div class="col-6">
+            <p>Patient ID: {{appointment.patient_id}}</p>
+            <p>Patient Name: {{appointment.patient_name}}</p>
+            <p>Patient Gender: {{appointment.patient_gender}}</p>
+            <p>Patient Age: {{appointment.patient_age}}</p>
+        </div>
+
+        {{!-- <div class="update-form col-4">
+            <form method="POST">
+                {{{form}}}
+                <input type="submit" class=" btn allbtn" value="Update" id="update">
+            </form>
+        </div> --}}
+
+    </div>
+    <hr>
+    </hr>
+    <h4 class="mt-4">Appointment Details</h4>
+    <table class="table">
+
+        <thead>
+            <tr>
+                <th>Doctor ID</th>
+                <th>Doctor Name</th>
+                <th>Appointment ID</th>
+                <th>Appointment Date and Time</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>
+                    {{appointment.doctor_id}}
+                </td>
+                <td>
+                    {{appointment.doctor_name}}
+                </td>
+
+                <td>
+                    {{appointment.appointment_id}}
+                </td>
+                <td>
+                    {{appointment.appointment_datetime}}
+                </td>
+
+            </tr>
+
+
+        </tbody>
+    </table>
+    <a class="btn allbtn" href="/">Back</a>
+
+
+</div>
+{{/block}}
+
+{{/extends}}

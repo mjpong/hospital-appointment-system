@@ -1,20 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
+{{#extends 'base'}}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+{{#block 'content'}}
 
-<body>
-    <ul>
-        {{#each records}}
-        <li>{{this.doctor_name}}</li>
-        {{/each}}
-    </ul>
+<div class="container-fluid">
+    <div>
+        <h3 style="text-align: center;">Hospital System</h3>
+    </div>
+    <div class="row">
 
-</body>
+        <div class="col-lg-3 col-sm-12">
+            <div class="results">
+                <p>Total of {{listing.length}} appointments</p>
 
-</html>
+            </div>
+            <a href="/appointments/add_appointment" class="btn allbtn">Create new appointment</a>
+            <div class="col-lg-9 col-sm-12">
+                <table class="table ">
+                    <thead>
+                        <tr>
+                            <th>Doctor ID</th>
+                            <th>Doctor Name</th>
+                            <th>Patient ID</th>
+                            <th>Patient</th>
+                            <th>Appt Date Time</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each listing}}
+                        <tr>
+                            <td>{{this.doctor_id}}</td>
+                            <td>{{this.doctor_name}}</td>
+                            <td> {{this.patient_id}}</td>
+                            <td>{{this.patient_name}}</td>
+                            <td>{{this.appointment_datetime}}</td>
+                            <td>
+                                <a href="/appointment/{{this._id}}" class="btn allbtn">Patient details</a>
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    {{/block}}
+
+    {{/extends}}

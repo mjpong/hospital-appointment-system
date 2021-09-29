@@ -1,0 +1,14 @@
+{{#extends "base"}}
+
+{{#block "content"}}
+<div class="container-fluid">
+    <form method="POST">
+        <div class="alert alert-danger">
+            Are you sure you want to cancel <strong>Appointment ID: {{appointment.appointment_id}}</strong>?
+        </div>
+        <input type="submit" value="Delete" class="btn allbtn">
+        <a href="/" class="btn allbtn">Back</a>
+    </form>
+</div>
+{{/block}}
+{{/extends}}

@@ -1,0 +1,59 @@
+{{#extends 'base'}}
+
+{{#block "content"}}
+<h1>Add a New Appointment</h1>
+<div class="add-form">
+
+    <form method="POST">
+        <div>
+            <label class="form-label">Doctor Name</label>
+            <select type="text" class="form-control" name="doctor_name">
+                <option value="D1Name">D1Name</option>
+                <option value="D2Name">D2Name</option>
+            </select>
+        </div>
+        <div>
+            <label class="form-label">Doctor ID</label>
+            <select type="text" class="form-control" name="doctor_id">
+                <option value="D1">D1</option>
+                <option value="D2">D2</option>
+            </select>
+        </div>
+        <div>
+            <label class="form-label">Patient Name</label>
+            <select type="text" class="form-control" name="patient_name">
+                <option value="P1Name">P1Name</option>
+                <option value="P2Name">P2Name</option>
+                <option value="P3Name">P3Name</option>
+            </select>
+
+        </div>
+        <div>
+            <label class="form-label">Patient ID</label>
+            <select type="text" class="form-control" name="patient_id">
+                <option value="P1">P1</option>
+                <option value="P2">P2</option>
+                <option value="P3">P3</option>
+            </select>
+        </div>
+        <div>
+            <label class="form-label">Patient Age</label>
+            <input type="text" class="form-control" name="patient_age" />
+        </div>
+        <div>
+            <label class="form-label">Patient Age</label>
+            <input type="text" class="form-control" name="patient_age" />
+        </div>
+        <div>
+            <label class="form-label">Date and Time</label>
+            <input type="text" class="form-control" name="appointment_datetime" />
+        </div>
+
+        <input type="submit" class="btn allbtn">
+        <a class="btn allbtn" href="/">Back</a>
+
+    </form>
+</div>
+{{/block}}
+
+{{/extends}}
