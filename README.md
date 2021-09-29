@@ -1,3 +1,11 @@
+# Hospital Appointment Tracker
+![ERD](public/erd.png)
+# Steps to do to replicate
+* yarn or npm install all dependencies
+* to add csv file to mongodb and delete code after
+
+## To add csv file to json to mongodb
+```
 const mongodb = require('mongodb').MongoClient;
 const csvtojson = require("csvtojson")
 
@@ -24,4 +32,4 @@ csvtojson()
             }
         );
     });
-
+```

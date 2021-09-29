@@ -4,9 +4,9 @@ const hbs = require('hbs');
 const wax = require('wax-on')
 const MongoUtil = require('./MongoUtil')
 const session = require("express-session")
-
 const cookieParser = require('cookie-parser');
 const flash = require("connect-flash")
+const MONGO_URL = "mongodb+srv://root:valter123@cluster0.zihtc.mongodb.net/?retryWrites=true&w=majority"
 
 require('dotenv').config();
 let app = express();
@@ -36,8 +36,7 @@ app.use(function (req, res, next) {
 
 // ROUTES
 async function main() {
-    console.log(process.env.MONGO_URL)
-    await MongoUtil.connect(process.env.MONGO_URL, "hospital");
+    await MongoUtil.connect(MONGO_URL, "hospital");
 
 
     app.get('/', async function (req, res) {
